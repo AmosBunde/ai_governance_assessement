@@ -216,12 +216,26 @@ The notebook prints formatted summaries at each step (system overview, complianc
 
 Before submitting, verify:
 
-- [ ] `governance_assessment.ipynb` — All TODO cells completed and runnable
-- [ ] `governance_workbook.xlsx` — All 6 sheets filled in (no remaining `[prompt]` text)
-- [ ] `results/` folder contains 6 PNG files:
+- [x] `governance_assessment.ipynb` — All TODO cells completed and runnable
+- [x] `governance_workbook.xlsx` — All 6 sheets filled in (no remaining `[prompt]` text)
+- [x] `results/` folder contains 6 PNG files:
   - `risk_heatmap.png`
   - `risk_mitigation_comparison.png`
   - `vendor_evaluation_chart.png`
   - `model_card_performance.png`
   - `monitoring_dashboard.png`
   - `executive_dashboard.png`
+
+---
+
+## Results Summary
+
+The completed assessment reaches the following conclusions (full detail in the notebook, workbook, and the repository root [README](../../README.md)):
+
+- **Classification**: HIGH-RISK AI system under EU AI Act Article 6(1) — a medical device (MDR 2017/745 Class IIa, Rule 11) covered by Annex I harmonisation legislation. No Article 5 prohibited practices; not Annex III-listed.
+- **Compliance gaps (Articles 8–15)**: 2 of 16 requirements compliant; 1 Critical gap (Article 15 Accuracy — hallucination rate 3.4% vs <2% target) and 5 High gaps (Art 9 ×2, Art 10 ×2, Art 15 Robustness).
+- **Risk register (NIST AI RMF)**: 8 risks — 1 Critical (R-001 clinical hallucinations, score 20), 5 High, 2 Medium; average score 15.0. Measure is the heaviest RMF function (total 32). Mitigations cut total risk 120 → 63 (−47.5%), strongest R-003 (−66.7%), weakest R-004/R-005 (−33.3%).
+- **Vendor (FoundationHealth Inc.)**: 88/135 = 65.2% → Medium Risk; CONDITIONAL APPROVAL. Strength: Data Privacy & Security (83.3%). Weakest criteria: no ISO/IEC 42001 (1/5), training-data opacity (2/5), lock-in (2/5), no disaggregated bias testing (2/5).
+- **Model performance**: overall Top-3 accuracy 91.7% meets the 90% target, but Rare Diseases (71.2%), Multi-morbidity 4+ (74.0%), Non-English Notes (84.3%), and Age 65+ (88.9%) fall below it — an Article 10 representativeness gap for the DE/FR/NL launch.
+- **Monitoring**: 16 KPIs / 10 incident types / S1–S4 SLAs; KPI-002 (hallucination rate) already failing at baseline; 4 coverage gaps identified (override rate, adversarial attempts, vendor version regressions, transfer compliance).
+- **Executive verdict**: overall governance readiness **62.5% → CONDITIONAL** — ~3 months to a Phase-1 German pilot, gated on hallucination <2%, Notified Body conformity assessment, vendor contract amendments, and DPIA/TIA updates.
