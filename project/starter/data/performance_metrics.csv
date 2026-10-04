@@ -1,0 +1,21 @@
+metric_id,subgroup,metric_name,value,unit,target,meets_target,sample_size,notes
+PM-001,Overall,Top-1 Diagnostic Accuracy,78.3,%,75.0,Yes,45000,Held-out test set
+PM-002,Overall,Top-3 Diagnostic Accuracy,91.7,%,90.0,Yes,45000,Held-out test set
+PM-003,Overall,Critical Finding Detection,94.2,%,95.0,No,45000,Slightly below target
+PM-004,Overall,False Positive Rate (Critical),8.1,%,<10.0,Yes,45000,
+PM-005,Overall,Hallucination Rate,3.4,%,<2.0,No,45000,ABOVE TARGET - needs improvement
+PM-006,Overall,Avg Response Latency,2.8,seconds,<5.0,Yes,45000,
+PM-007,Overall,Drug Interaction Precision,89.5,%,85.0,Yes,45000,
+PM-008,Male,Top-3 Diagnostic Accuracy,92.1,%,90.0,Yes,23400,
+PM-009,Female,Top-3 Diagnostic Accuracy,91.3,%,90.0,Yes,21600,
+PM-010,Age 18-40,Top-3 Diagnostic Accuracy,93.5,%,90.0,Yes,11200,
+PM-011,Age 41-64,Top-3 Diagnostic Accuracy,92.0,%,90.0,Yes,19800,
+PM-012,Age 65+,Top-3 Diagnostic Accuracy,88.9,%,90.0,No,14000,Approaching threshold - monitor
+PM-013,Cardiovascular,Top-3 Diagnostic Accuracy,94.1,%,90.0,Yes,8500,Strong performance
+PM-014,Neurological,Top-3 Diagnostic Accuracy,90.3,%,90.0,Yes,6200,
+PM-015,Rare Diseases,Top-3 Diagnostic Accuracy,71.2,%,90.0,No,1035,SIGNIFICANTLY BELOW - mitigation required
+PM-016,Non-English Notes,Top-3 Diagnostic Accuracy,84.3,%,90.0,No,5400,BELOW THRESHOLD - translation artifacts
+PM-017,Multi-morbidity (4+),Top-3 Diagnostic Accuracy,74.0,%,90.0,No,7650,BELOW THRESHOLD - complexity issue
+PM-018,Overall,Equalized Odds (gender),0.96,ratio,>0.90,Yes,45000,Near parity
+PM-019,Overall,Demographic Parity (age),0.91,ratio,>0.90,Yes,45000,Slight disparity for 65+
+PM-020,Overall,Predictive Parity (conditions),0.94,ratio,>0.90,Yes,45000,Consistent across top-20 categories

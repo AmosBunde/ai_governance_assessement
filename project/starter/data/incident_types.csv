@@ -1,0 +1,11 @@
+incident_id,incident_type,description,example,severity_range,detection_method
+INC-01,Clinical Hallucination,"Model generates fabricated medical information, references, or diagnoses","Recommending a drug that does not exist or citing a non-existent clinical trial",S2-S1,"Automated reference verification, physician flagging"
+INC-02,Harmful Suggestion,"Model output could lead to patient harm if followed","Suggesting contraindicated medication for documented allergy",S1,"Physician reporting, safety filter logs"
+INC-03,Bias-Related Harm,"Model demonstrates systematic bias affecting care quality for specific groups","Consistently lower diagnostic accuracy for a specific ethnic or age group",S2-S1,"Stratified performance monitoring, fairness dashboards"
+INC-04,Privacy Breach,"Patient identifiable information exposed through model behavior","Model outputs patient name or MRN in response (de-identification failure)",S1,"Automated PII scanning, audit log review"
+INC-05,Performance Degradation,"Significant drop in model accuracy or reliability","Top-3 accuracy drops below 85% across all cases",S3-S2,"Automated KPI monitoring alerts"
+INC-06,Adversarial Manipulation,"Deliberate attempt to manipulate model outputs","Prompt injection via crafted clinical notes to alter diagnostic suggestions",S2-S1,"Security monitoring, anomaly detection"
+INC-07,Vendor Service Disruption,"FoundationHealth API outage or significant degradation","API returns errors, timeouts, or unacceptable latency for >15 minutes",S3-S2,"Real-time API health checks"
+INC-08,Data Pipeline Failure,"Failure in data ingestion, de-identification, or processing","De-identification engine fails; raw patient data sent to model API",S1,"Pipeline health monitoring, automated validation"
+INC-09,Unauthorized Access,"Unauthorized user gains access to system or data","Compromised physician credentials used to query ClinicalCompanion",S2-S1,"Authentication logs, SIEM alerts"
+INC-10,Regulatory Non-Compliance,"Discovery of non-compliance with applicable regulations","Post-market monitoring requirement not met per EU AI Act deadline",S3-S2,"Compliance calendar, internal audit"

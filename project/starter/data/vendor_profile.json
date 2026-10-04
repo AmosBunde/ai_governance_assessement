@@ -1,0 +1,73 @@
+{
+  "company": {
+    "name": "FoundationHealth Inc.",
+    "headquarters": "San Francisco, CA, USA",
+    "founded": 2021,
+    "employees": 450,
+    "annual_revenue_usd": 85000000,
+    "funding_stage": "Series C",
+    "funding_amount_usd": 180000000,
+    "funding_year": 2024,
+    "profitable": false,
+    "revenue_growth_yoy": "60%"
+  },
+  "service": {
+    "model_name": "FoundationHealth Medical LLM v3.2",
+    "parameters": "7B",
+    "contract_type": "Enterprise API license",
+    "contract_term_years": 3,
+    "contract_period": "2025-2028",
+    "key_clients": 12,
+    "client_regions": ["US", "EU"]
+  },
+  "certifications": {
+    "soc2_type2": {"certified": true, "auditor": "Deloitte", "year": 2024, "findings": "No material findings"},
+    "hipaa": {"compliant": true, "baa_executed": true},
+    "iso_42001": {"certified": false, "plans": "None disclosed"},
+    "iso_27001": {"certified": true, "year": 2023}
+  },
+  "data_processing": {
+    "api_server_location": "US-based",
+    "eu_dpa_signed": true,
+    "sccs_in_place": true,
+    "joint_tia_conducted": false,
+    "data_retention_days": 30,
+    "deletion_on_request": true,
+    "encryption_transit": "TLS 1.3",
+    "encryption_rest": "AES-256",
+    "customer_managed_keys": false
+  },
+  "model_governance": {
+    "versioning": "Semantic versioning",
+    "update_notice_days": 30,
+    "customer_opt_out": true,
+    "rollback_window_days": 90,
+    "rollback_method": "Support ticket (not self-service)",
+    "pen_test_frequency": "Annual",
+    "pen_test_provider": "Third-party",
+    "pen_test_critical_findings_2024": 0
+  },
+  "sla": {
+    "uptime": "99.9%",
+    "p1_response_hours": 1,
+    "p2_response_hours": 4,
+    "financial_credits": true,
+    "dr_rto_hours": 4,
+    "dr_rpo_hours": 1,
+    "dr_testing": "Annual",
+    "customer_dr_observation": false
+  },
+  "responsible_ai": {
+    "principles_published": true,
+    "principles_alignment": "OECD AI Principles",
+    "internal_safety_team_size": 8,
+    "external_ethics_board": false,
+    "ethics_review_formalized": false,
+    "regulatory_cooperation": true
+  },
+  "liability": {
+    "cyber_insurance_usd": 10000000,
+    "liability_cap": "12 months of fees",
+    "clinical_outcome_coverage": false
+  }
+}

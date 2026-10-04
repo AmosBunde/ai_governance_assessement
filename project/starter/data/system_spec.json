@@ -1,0 +1,97 @@
+{
+  "system": {
+    "name": "ClinicalCompanion",
+    "version": "1.0",
+    "type": "Clinical Decision Support System (CDSS)",
+    "description": "Generative AI-powered system that assists physicians with diagnostic suggestions by analyzing patient records",
+    "developer": "MedAssist AI",
+    "release_date_planned": "2025-09-01"
+  },
+  "architecture": {
+    "foundation_model": {
+      "provider": "FoundationHealth Inc.",
+      "model_name": "FoundationHealth Medical LLM v3.2",
+      "parameters": "7B",
+      "architecture_type": "Transformer-based",
+      "context_window": 32768,
+      "access_method": "API",
+      "pre_training_corpus": "Medical literature, clinical textbooks, PubMed (~2.1M documents)"
+    },
+    "fine_tuning": {
+      "clinical_encounters": 450000,
+      "expert_qa_pairs": 12000,
+      "rlhf_specialists": 35,
+      "specialties_covered": 8
+    },
+    "rag_sources": [
+      "MedAssist AI curated clinical knowledge base (updated quarterly)",
+      "Drug interaction database (DailyMed / EMA integration)",
+      "ICD-11 coding reference",
+      "Clinical practice guidelines (NICE, ESC, AHA)"
+    ],
+    "infrastructure": {
+      "cloud_provider": "AWS",
+      "region": "eu-west-1 (Frankfurt)",
+      "ehr_integration": "HL7 FHIR R4",
+      "authentication": "OAuth 2.0 + SAML SSO, RBAC",
+      "encryption_at_rest": "AES-256",
+      "encryption_in_transit": "TLS 1.3",
+      "uptime_sla": "99.9%"
+    },
+    "de_identification": {
+      "method": "NLP-based pipeline",
+      "direct_identifiers": "Replaced with synthetic tokens",
+      "quasi_identifiers": "Generalized",
+      "validation_standards": ["HIPAA Safe Harbor", "GDPR Article 9"],
+      "re_identification_target": "<0.04%",
+      "assessment_frequency": "Quarterly"
+    }
+  },
+  "intended_use": {
+    "primary_functions": [
+      "Ranked diagnostic suggestions with confidence scores",
+      "Differential diagnosis support with reasoning",
+      "Evidence-based treatment considerations mapped to clinical guidelines",
+      "Risk flags for critical findings, drug interactions, deteriorating status"
+    ],
+    "intended_users": [
+      "Licensed physicians (primary care and specialists)",
+      "Clinical fellows and residents (under attending supervision)",
+      "Nurse practitioners and physician assistants (where authorized)"
+    ],
+    "intended_environments": [
+      "Hospital inpatient departments (emergency, internal medicine, oncology, cardiology)",
+      "Outpatient clinics",
+      "Telehealth consultations (secondary reference tool)"
+    ],
+    "out_of_scope": [
+      "Autonomous diagnosis or treatment decisions",
+      "Standalone diagnostic tool (must not replace physician judgment)",
+      "Patient-facing interface (no direct patient use)",
+      "Pediatric populations (under 18) in initial release",
+      "Emergency triage as sole decision-making tool"
+    ]
+  },
+  "deployment": {
+    "phases": [
+      {"phase": 1, "name": "Pilot", "timeline": "Month 1-3", "scope": "3 hospitals in Germany", "users": 50},
+      {"phase": 2, "name": "Expansion", "timeline": "Month 4-8", "scope": "12 hospitals (DE, FR, NL)", "users": 300},
+      {"phase": 3, "name": "General Availability", "timeline": "Month 9-12", "scope": "EU-wide", "users": 2000}
+    ],
+    "regulatory_status": {
+      "eu_ai_act": "Classification pending",
+      "mdr_ce_marking": "Application submitted, awaiting Notified Body",
+      "gdpr_dpia": "Completed v1, needs update for foundation model flows",
+      "hipaa": "Compliant, BAA with FoundationHealth in place"
+    }
+  },
+  "stakeholders": [
+    {"role": "Chief Medical Officer", "name": "Dr. Elena Vasquez", "responsibility": "Clinical validation and safety oversight"},
+    {"role": "VP of Engineering", "name": "Marcus Chen", "responsibility": "Technical architecture and deployment"},
+    {"role": "Head of Legal & Compliance", "name": "Sarah Okonkwo", "responsibility": "Regulatory compliance and contracts"},
+    {"role": "AI Governance Analyst", "name": "(Student)", "responsibility": "Governance assessment and documentation"},
+    {"role": "Data Protection Officer", "name": "Thomas Müller", "responsibility": "GDPR compliance and DPIA"},
+    {"role": "Product Manager", "name": "Aisha Rahman", "responsibility": "Product strategy and user requirements"},
+    {"role": "Vendor Liaison", "name": "James Park", "responsibility": "FoundationHealth relationship and model updates"}
+  ]
+}

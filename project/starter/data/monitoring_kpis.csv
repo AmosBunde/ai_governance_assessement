@@ -1,0 +1,17 @@
+kpi_id,dimension,metric_name,measurement_method,frequency,threshold,escalation_trigger,responsible_role
+KPI-001,Clinical Performance,Top-3 Diagnostic Accuracy,"Comparison against physician-confirmed diagnoses (sampled)","Weekly (sampled), Monthly (full)",>= 90%,Drops below 88% for 2 consecutive weeks,Data Science Team
+KPI-002,Clinical Performance,Hallucination Rate,"Automated reference verification + physician flagging","Daily (auto), Weekly (manual)",< 2% (current: 3.4%),Exceeds 5% or any critical hallucination,Data Science Team
+KPI-003,Clinical Performance,Critical Finding Detection,"Audit against known critical cases in test set",Monthly,>= 93%,Drops below 90%,Clinical Safety Officer
+KPI-004,Clinical Performance,False Positive Rate (Critical),"Review of physician dismissal rates for critical alerts",Weekly,< 10%,Exceeds 15%,Data Science Team
+KPI-005,Clinical Performance,Drug Interaction Precision,"Comparison against PharmaDB ground truth",Monthly,>= 85%,Drops below 80%,Data Science Team
+KPI-006,Fairness & Bias,Accuracy Parity (age groups),"Stratified accuracy comparison across age brackets",Monthly,Max gap < 5% across standard groups,Any group drops >7% below overall,AI Governance Analyst
+KPI-007,Fairness & Bias,Accuracy Parity (gender),"Stratified accuracy by gender",Monthly,Max gap < 3%,Gap exceeds 5%,AI Governance Analyst
+KPI-008,Fairness & Bias,Equalized Odds,"FPR/FNR comparison across demographics",Quarterly,>= 0.90 across groups,Drops below 0.85 for any group,AI Governance Analyst
+KPI-009,Fairness & Bias,Underrepresented Pop. Performance,"Dedicated evaluation on underrepresented data",Quarterly,Improving trend toward parity,Performance gap widening,Chief Medical Officer
+KPI-010,Operational,System Uptime,"AWS CloudWatch infrastructure monitoring",Real-time,>= 99.9%,Drops below 99.5% in any month,VP Engineering
+KPI-011,Operational,Average Response Latency,"API response time tracking",Real-time,< 5 seconds (p95),p95 exceeds 8 seconds,VP Engineering
+KPI-012,Operational,API Error Rate,"HTTP error code monitoring",Real-time,< 0.1%,Exceeds 1%,VP Engineering
+KPI-013,Operational,Vendor API Availability,"FoundationHealth API health checks",Real-time,>= 99.9% per SLA,Any outage > 15 minutes,VP Engineering
+KPI-014,Data Quality,Input Data Completeness,"Validation of required EHR fields",Per-request,>= 95% completeness,Drops below 90%,Data Science Team
+KPI-015,Data Quality,De-identification Validation,"Automated PII scanning of model inputs",Daily,0 PII leaks,Any PII detected in model input,Data Protection Officer
+KPI-016,Data Quality,Data Drift Detection,"Statistical comparison of input distributions vs training data (KL divergence)",Monthly,KL divergence < 0.1,KL divergence exceeds 0.2,Data Science Team

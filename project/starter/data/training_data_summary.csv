@@ -1,0 +1,6 @@
+source_id,source_name,record_count,time_period_start,time_period_end,geography,data_type,language,notes
+SRC-001,Partner Hospital Network A (EU),280000,2018,2024,"Germany, France, Netherlands",EHR encounters,Mixed (DE/FR/NL/EN),Primary EU clinical data source
+SRC-002,Partner Hospital Network B (US),170000,2019,2024,United States (multi-state),EHR encounters,English,US clinical data
+SRC-003,PubMed Abstract Corpus,2100000,1990,2024,Global,Medical literature abstracts,English,Foundation model pre-training
+SRC-004,Expert Clinical Q&A,12000,2024,2024,"EU, US",Curated Q&A pairs,English,"35 physicians, 8 specialties"
+SRC-005,Clinical Practice Guidelines,340,current,current,"EU, US, WHO",Practice guidelines,English,"NICE, ESC, AHA guidelines"
